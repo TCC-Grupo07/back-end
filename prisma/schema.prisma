@@ -26,21 +26,29 @@ model User {
   @@map("users")
 }
 
-// model Sector {
-//   id          String    @id @default(uuid())
-//   name        String
-//   description String
-//   created_at  DateTime? @default(now())
-//   updated_at  DateTime? @default(now())
+model Sector {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
 
-//   @@map("sectors")
-// }
+  @@map("sectors")
+}
 
-// model Supplier {
-//   id                String @id @default(uuid())
-//   name              String
-//   cnpj              String
-//   inscricaoEstadual String
+model Supplier {
+  id                String @id @default(uuid())
+  name              String
+  cnpj              String
+  inscricaoEstadual String
 
-//   @@map("suppliers")
-// }
+  @@map("suppliers")
+}
+
+model Leave{
+  id String @id @default(uuid())
+  data  DateTime? @default(now())
+  quantidade String
+
+  @@map("leaves")
+}
