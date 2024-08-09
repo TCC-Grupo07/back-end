@@ -18,12 +18,3 @@ CREATE TABLE "suppliers" (
 
     CONSTRAINT "suppliers_pkey" PRIMARY KEY ("id")
 );
-
--- CreateTable
-CREATE TABLE "leaves" (
-    "id" TEXT NOT NULL,
-    "data" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
-    "quantidade" TEXT NOT NULL,
-
-    CONSTRAINT "leaves_pkey" PRIMARY KEY ("id")
-);

@@ -23,7 +23,7 @@ model User {
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
-  @@map("users")
+  @@map("users") 
 }
 
 model Sector {
@@ -45,10 +45,3 @@ model Supplier {
   @@map("suppliers")
 }
 
-model Leave{
-  id String @id @default(uuid())
-  data  DateTime? @default(now())
-  quantidade String
-
-  @@map("leaves")
-}
