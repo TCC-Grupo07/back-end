@@ -2,7 +2,7 @@ import prismaClient from "../../prisma";
 
 class ListSectorService {
     async execute() {
-        const category = await prismaClient.sector.findMany({
+        const sector = await prismaClient.sector.findMany({
             select: {
                 id: true,
                 name: true,
@@ -10,7 +10,7 @@ class ListSectorService {
             }
         })
 
-        return category
+        return sector
 
     }
 }

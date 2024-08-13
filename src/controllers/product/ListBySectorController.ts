@@ -5,8 +5,8 @@ class ListByProductController {
     async handle(req: Request, res: Response) {
         const sector_id = req.query.sector_id_id as string
 
-        const listByCategory = new ListByProductService()
-        const products = await listByCategory.execute({
+        const listBySector = new ListByProductService()
+        const products = await listBySector.execute({
             sector_id
         })
 

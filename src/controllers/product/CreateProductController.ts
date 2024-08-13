@@ -3,12 +3,12 @@ import { CreateProductService } from '../../services/product/CreateProductServic
 
 class CreateProductController {
     async handle(req: Request, res: Response) {
-        const { name, price, description, sector_id } = req.body
+        const { name, price, description, sector_id, } = req.body
 
 
         const createProductService = new CreateProductService()
 
-        if (!req.file) {
+        if (!req.file {
             throw new Error("error upload file")
         } else {
 
@@ -21,14 +21,11 @@ class CreateProductController {
                 description,
                 banner,
                 sector_id
-            }) 
+            })
 
             return res.json(product)
 
         }
-
-
-
     }
 }
 
