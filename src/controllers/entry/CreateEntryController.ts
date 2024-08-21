@@ -17,7 +17,7 @@ class CreateEntryController {
 
         })
 
-      
+             
 
         return res.json(entry)
     }

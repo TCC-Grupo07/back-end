@@ -51,7 +51,7 @@ class CreateEntryService {
             where: { id: product_id },
         });
 
-        if (!product) {
+        if (!product_id) {
             throw new Error('Produto não encontrado.');
         }
 
