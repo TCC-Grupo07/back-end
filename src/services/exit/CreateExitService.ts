@@ -1,13 +1,13 @@
 
 import prismaClient from "../../prisma";
 
-interface EntryRequest {
+interface ExitRequest {
     quantidade: number | string; // Permite que quantidade seja um número ou string
     product_id: string;
 }
 
-class CreateEntryService {
-    async execute({ quantidade, product_id }: EntryRequest) {
+class CreateExitService {
+    async execute({ quantidade, product_id }: ExitRequest) {
         // Verifica se o ID do produto foi fornecido
         if (!product_id) {
             throw new Error('Product ID is required.');
@@ -23,14 +23,14 @@ class CreateEntryService {
         }
 
         // Converte a quantidade para número, se necessário
-        const quantidadeAsNumber = typeof quantidade === 'string' ? parseInt(quantidade, 10) : quantidade;
+        const quantidadeAsNumber = typeof quantidade === 'string' ? parseInt(quantidade) : quantidade;
 
         if (isNaN(quantidadeAsNumber)) {
             throw new Error('Quantidade inválida.');
         }
 
-        // Cria a nova entrada (Entry)
-        const entry = await prismaClient.entry.create({
+        // Cria a nova entrada (Exit)
+        const output = await prismaClient.output.create({
             data: {
                 quantidade: quantidadeAsNumber, // Garante que seja um número
                 product: {
@@ -39,9 +39,8 @@ class CreateEntryService {
             }
         });
 
-        return entry;
+        return output;
     }
 }
 
-export { CreateEntryService };
-
+export { CreateExitService };
