@@ -22,6 +22,7 @@ import uploadConfig from "./config/multer"
 import { ListByProductController } from "./controllers/product/ListBySectorController";
 
 import { CreateEntryController } from "./controllers/entry/CreateEntryController";
+
 import { CreateExitController } from "./controllers/exit/CreateExitController";
 
 const router = Router();
@@ -51,5 +52,7 @@ router.post('/entry', isAuthenticated, new CreateEntryController().handle)
 
 // -- ROTA EXIT --
 router.post('/output', isAuthenticated, new CreateExitController().handle)
+
+
 
 export { router } 
