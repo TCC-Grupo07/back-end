@@ -55,4 +55,6 @@ router.post('/output', isAuthenticated, new CreateExitController().handle)
 
 
 
+
+
 export { router } 
