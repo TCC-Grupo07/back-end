@@ -24,6 +24,7 @@ import { ListByProductController } from "./controllers/product/ListBySectorContr
 import { CreateEntryController } from "./controllers/entry/CreateEntryController";
 
 import { CreateExitController } from "./controllers/exit/CreateExitController";
+import { RemoveProductController } from "./controllers/product/RemoveProductController";
 
 const router = Router();
 
@@ -46,6 +47,8 @@ router.get('/sector', isAuthenticated, new ListSectorController().handle)
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
 
 router.get('/product', isAuthenticated, new ListByProductController().handle)
+
+router.delete('/product', isAuthenticated, new RemoveProductController().handle)
 
 // -- ROTAS ENTRY --
 router.post('/entry', isAuthenticated, new CreateEntryController().handle)
