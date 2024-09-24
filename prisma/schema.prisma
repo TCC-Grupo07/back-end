@@ -49,7 +49,7 @@ model Product {
 
   sector    Sector   @relation(fields: [sector_id], references: [id])
   sector_id String
-  Entry     Entry[]  // Remova o onDelete aqui
+  Entry     Entry[] // Remova o onDelete aqui
   Output    Output[] // Remova o onDelete aqui
 
   @@map("products")
