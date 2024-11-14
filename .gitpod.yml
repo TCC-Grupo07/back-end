@@ -5,5 +5,5 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: docker compose up -d && mpm install && npm add prisma --dev && npx prisma migrate dev && npm run dev
+  - init: docker compose up -d && npm install && npm add prisma --dev && npx prisma migrate dev && npm run dev
     command: yarn run dev
