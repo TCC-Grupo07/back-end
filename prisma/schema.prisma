@@ -76,12 +76,3 @@ model Output {
 
   @@map("outputs")
 }
-
-model Supplier {
-  id                String @id @default(uuid())
-  name              String
-  cnpj              String
-  inscricaoEstadual String
-
-  @@map("suppliers")
-}
