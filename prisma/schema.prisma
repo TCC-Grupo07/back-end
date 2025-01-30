@@ -38,6 +38,7 @@ model Sector {
 
 model Product {
   id            String    @id @default(uuid())
+  codigo        String 
   name          String
   price         String
   description   String
